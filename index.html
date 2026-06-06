@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kelly Bayingana — Full-Stack Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind compiled output -->
+    <link rel="stylesheet" href="css/output.css" />
+  </head>
+  <body class="overflow-x-hidden">
+    <!-- Custom cursor (desktop only) -->
+    <div class="cursor-dot hidden md:block" id="cursorDot"></div>
+    <div class="cursor-ring hidden md:block" id="cursorRing"></div>
+
+    <!-- ── NAVBAR ────────────────────────────────── -->
+    <header class="fixed top-4 left-4 right-4 z-50">
+      <nav
+        class="nav-blur border border-[#E4E4E7] rounded-2xl px-6 py-3.5 flex items-center justify-between max-w-5xl mx-auto"
+      >
+        <a
+          href="#"
+          class="font-bold text-[15px] tracking-tight text-[#09090B]"
+          style="font-family: &quot;Archivo&quot;, sans-serif"
+          >K-B</a
+        >
+        <ul class="hidden md:flex items-center gap-8">
+          <li>
+            <a href="#about" class="nav-link text-sm font-medium">About</a>
+          </li>
+          <li>
+            <a href="#work" class="nav-link text-sm font-medium">Projects</a>
+          </li>
+          <li>
+            <a href="#contact" class="nav-link text-sm font-medium">Contact</a>
+          </li>
+        </ul>
+        <a
+          href="#contact"
+          class="text-sm font-semibold px-4 py-2 bg-[#09090B] text-white rounded-xl hover:bg-zinc-800 transition-colors duration-200 cursor-pointer"
+        >
+          View Resume
+        </a>
+      </nav>
+    </header>
+
+    <!-- ── HERO ────────────────────────────────────── -->
+    <section
+      class="min-h-screen flex flex-col justify-center pt-28 pb-16 px-6 max-w-5xl mx-auto"
+    >
+      <div class="flex items-center gap-3 mb-8 reveal">
+        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+        <span class="text-sm text-[#71717A] font-medium"
+          >Open to co-op opportunities</span
+        >
+      </div>
+
+      <h1
+        class="font-black text-[clamp(3rem,8vw,7rem)] leading-[0.92] tracking-tight text-[#09090B] mb-8 reveal reveal-delay-1"
+        style="font-family: &quot;Archivo&quot;, sans-serif"
+      >
+        Hi, I'm Kelly<br />
+        <span class="text-[#A1A1AA]">I'm a CST Student</span><br />
+        <span class="italic font-light"> at BCIT.</span>
+      </h1>
+
+      <div
+        class="flex flex-col md:flex-row md:items-end justify-between gap-16 reveal reveal-delay-2"
+      >
+        <p class="text-[1.1rem] text-[#71717A] leading-[1.8] max-w-[38rem]">
+          <br />
+          <br />
+          Based in Vancouver, BC <br />
+        </p>
+        <div class="flex gap-8 shrink-0 items-center">
+          <a
+            href="#work"
+            class="link-hover text-sm font-semibold text-[#09090B] cursor-pointer"
+            >View work ↓</a
+          >
+          <a
+            href="https://github.com/bayingana55"
+            target="_blank"
+            rel="noopener"
+            class="link-hover text-sm font-medium text-[#71717A] cursor-pointer"
+            >GitHub</a
+          >
+          <a
+            href="https://www.linkedin.com/in/kelly-r-bayingana-7097701ba"
+            target="_blank"
+            rel="noopener"
+            class="link-hover text-sm font-medium text-[#71717A] cursor-pointer"
+            >LinkedIn</a
+          >
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div
+        class="mt-16 pt-10 border-t border-[#E4E4E7] grid grid-cols-2 gap-6 reveal reveal-delay-3"
+      >
+        <div>
+          <p
+            class="font-black text-4xl text-[#09090B] stat-number"
+            style="font-family: &quot;Archivo&quot;, sans-serif"
+          >
+            2.
+          </p>
+          <p class="text-sm text-[#71717A] mt-1">PROJECTS COMPLETED</p>
+        </div>
+        <div>
+          <p
+            class="font-black text-4xl text-[#09090B] stat-number"
+            style="font-family: &quot;Archivo&quot;, sans-serif"
+          >
+            <br />
+          </p>
+          <p class="text-sm text-[#71717A] mt-1">JAN 2027 CO-OP AVAILABLE</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── MARQUEE ──────────────────────────────────── -->
+    <div class="border-y border-[#E4E4E7] bg-[#09090B] py-4 overflow-hidden">
+      <div
+        class="flex whitespace-nowrap"
+        style="animation: marquee 20s linear infinite"
+      >
+        <span
+          class="marquee-inner flex gap-12 pr-12 text-white/30 font-bold text-sm uppercase tracking-widest"
+          style="font-family: &quot;Archivo&quot;, sans-serif"
+        >
+          <span>Product Design</span><span class="text-white/15">✦</span>
+          <span>Frontend Dev</span><span class="text-white/15">✦</span>
+          <span>UX Research</span><span class="text-white/15">✦</span>
+          <span>Motion Design</span><span class="text-white/15">✦</span>
+          <span>Prototyping</span><span class="text-white/15">✦</span>
+          <span>Figma</span><span class="text-white/15">✦</span>
+          <span>Frontend Dev</span><span class="text-white/15">✦</span>
+          <span>UX Research</span><span class="text-white/15">✦</span>
+          <span>Motion Design</span><span class="text-white/15">✦</span>
+          <span>Prototyping</span><span class="text-white/15">✦</span>
+          <span>Product Design</span><span class="text-white/15">✦</span>
+          <span>Figma</span><span class="text-white/15">✦</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- ── ABOUT ────────────────────────────────────── -->
+    <section id="about" class="py-24 px-6 max-w-5xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+        <div>
+          <p
+            class="text-sm font-semibold text-[#2563EB] uppercase tracking-widest mb-3 reveal"
+          >
+            Philosophy
+          </p>
+          <h2
+            class="font-black text-5xl md:text-6xl text-[#09090B] leading-tight mb-8 reveal reveal-delay-1"
+            style="font-family: &quot;Archivo&quot;, sans-serif"
+          >
+            Design is<br />clarity.
+          </h2>
+          <p class="text-[#71717A] leading-relaxed mb-6 reveal reveal-delay-2">
+            I believe good design is more than aesthetics!<br />
+            it’s about clarity, usability, and intention.
+            <br />
+            <br />I enjoy creating digital experiences where every interaction
+            feels natural, refined, and purposeful.
+          </p>
+
+          <a
+            href="#contact"
+            class="inline-flex items-center gap-2 font-semibold text-[#09090B] border-b-2 border-[#09090B] pb-0.5 hover:text-[#2563EB] hover:border-[#2563EB] transition-colors duration-200 cursor-pointer reveal reveal-delay-4"
+          >
+            Let's work together
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+
+        <div class="reveal reveal-delay-2">
+          <!-- Photo placeholder -->
+          <div class="rounded-2xl overflow-hidden mb-8 aspect-[4/3]">
+            <img
+              src="assets/images/kelly.jpg"
+              alt="Kelly Bayingana"
+              class="w-full h-full object-cover scale-125 object-top"
+            />
+          </div>
+
+          <!-- Skills -->
+          <div>
+            <p
+              class="text-xs font-semibold text-[#A1A1AA] uppercase tracking-widest mb-4"
+            >
+              Skills & tools
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-tag">Figma</span>
+              <span class="skill-tag">React</span>
+              <span class="skill-tag">Next.js</span>
+              <span class="skill-tag">Tailwind CSS</span>
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">Design Systems</span>
+              <span class="skill-tag">Prototyping</span>
+              <span class="skill-tag">UX Research</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PROJECTS ────────────────────────────────────── -->
+    <section id="work" class="py-24 px-6 bg-[#09090B]">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex items-center justify-between mb-14 reveal">
+          <h2
+            class="font-black text-5xl md:text-6xl text-white leading-tight"
+            style="font-family: &quot;Archivo&quot;, sans-serif"
+          >
+            Projects
+          </h2>
+          <a
+            href="#"
+            class="hidden md:block link-hover text-sm font-medium text-white cursor-pointer"
+            >See all →</a
+          >
+        </div>
+
+        <div class="divide-y divide-white/10">
+          <!-- PROJECT SLOT 1 -->
+          <div
+            class="py-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center reveal"
+          >
+            <div class="flex flex-col gap-4">
+              <h3
+                class="font-black text-2xl text-white leading-tight"
+                style="font-family: &quot;Archivo&quot;, sans-serif"
+              >
+                <strong>ShiftLog</strong>
+              </h3>
+              <p class="leading-relaxed text-sm" style="color: rgba(255,255,255,0.6)">
+                ShiftLog is a shift tracking and savings projection tool I built
+                while working two jobs through school. I was manually
+                calculating my hours in my head — I needed something that would
+                tell me exactly when I'd hit my financial goals at my current
+                pace. It logs your shifts, calculates take-home pay after tax,
+                and projects your savings target date. Started as a Python
+                script and evolved into a full web application over six months
+                of real use.
+              </p>
+              <div class="flex flex-wrap gap-2 mt-1">
+                <span
+                  class="text-xs font-medium text-white/60 border border-white/20 px-3 py-1 rounded-full"
+                  >Python</span
+                >
+                <span
+                  class="text-xs font-medium text-white/60 border border-white/20 px-3 py-1 rounded-full"
+                  >Flask</span
+                >
+                <span
+                  class="text-xs font-medium text-white/60 border border-white/20 px-3 py-1 rounded-full"
+                  >SQLite</span
+                >
+                <span
+                  class="text-xs font-medium text-white/60 border border-white/20 px-3 py-1 rounded-full"
+                  >Tailwind CSS</span
+                >
+              </div>
+            </div>
+            <div
+              class="rounded-2xl overflow-hidden bg-white/5 border border-white/10 h-[240px] flex items-center justify-center"
+            >
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-white/20"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <circle cx="8.5" cy="8.5" r="1.5" />
+                <polyline points="21 15 16 10 5 21" />
+              </svg>
+            </div>
+          </div>
+
+          <!-- PROJECT SLOT 2 -->
+          <div
+            class="py-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center reveal reveal-delay-1"
+          >
+            <div class="flex flex-col gap-4">
+              <h3
+                class="font-black text-2xl text-white leading-tight"
+                style="font-family: &quot;Archivo&quot;, sans-serif"
+              >
+                <strong>DocFlow</strong>
+              </h3>
+              <p class="leading-relaxed text-sm" style="color: rgba(255,255,255,0.6)">
+                DocFlow is a document management platform built to solve a real
+                problem — many organizations still run HR operations on paper,
+                making retrieval slow and search impossible. It lets HR teams
+                upload scanned contracts and employee records, runs server-side
+                OCR to extract the text, and stores everything in a PostgreSQL
+                database with full-text search. Built with role-based JWT
+                authentication so admins and employees see different views of
+                the same system.
+              </p>
+              <div class="flex flex-wrap gap-2 mt-1">
+                <span
+                  class="text-xs font-medium text-white/60 border border-white/20 px-3 py-1 rounded-full"
+                  >React</span
+                >
+                <span
+                  class="text-xs font-medium text-white/60 border border-white/20 px-3 py-1 rounded-full"
+                  >Node.js</span
+                >
+                <span
+                  class="text-xs font-medium text-white/60 border border-white/20 px-3 py-1 rounded-full"
+                  >Express</span
+                >
+                <span
+                  class="text-xs font-medium text-white/60 border border-white/20 px-3 py-1 rounded-full"
+                  >PostgreSQL</span
+                >
+                 <span
+                  class="text-xs font-medium text-white/60 border border-white/20 px-3 py-1 rounded-full"
+                  >JWT</span
+                >
+              </div>
+            </div>
+            <div
+              class="rounded-2xl overflow-hidden bg-white/5 border border-white/10 h-[240px] flex items-center justify-center"
+            >
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-white/20"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <circle cx="8.5" cy="8.5" r="1.5" />
+                <polyline points="21 15 16 10 5 21" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONTACT ──────────────────────────────────── -->
+    <section id="contact" class="py-24 px-6 max-w-5xl mx-auto">
+      <div class="max-w-2xl mx-auto text-center">
+        <p
+          class="text-sm font-semibold text-[#2563EB] uppercase tracking-widest mb-4 reveal"
+        >
+          Let's connect
+        </p>
+        <h2
+          class="font-black text-5xl md:text-7xl text-[#09090B] leading-tight mb-6 reveal reveal-delay-1"
+          style="font-family: &quot;Archivo&quot;, sans-serif"
+        >
+          Start a<br />project.
+        </h2>
+        <p
+          class="text-[#71717A] text-lg leading-relaxed mb-12 reveal reveal-delay-2"
+        >
+          Have something in mind? I'm currently available for freelance work and
+          open to new opportunities. Let's build something great together.
+        </p>
+
+        <div class="reveal reveal-delay-3">
+          <a
+            href="mailto:bayingana55@gmail.com"
+            class="inline-flex items-center gap-3 bg-[#09090B] text-white font-semibold text-lg px-8 py-4 rounded-2xl hover:bg-zinc-800 transition-colors duration-200 cursor-pointer mb-6 group"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+              />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+            Say hello
+            <svg
+              class="group-hover:translate-x-1 transition-transform duration-200"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+
+          <div class="flex items-center justify-center gap-8 mt-8">
+            <a
+              href="https://github.com/bayingana55"
+              target="_blank"
+              rel="noopener"
+              class="link-hover text-sm font-medium text-[#71717A] cursor-pointer inline-flex items-center"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="opacity-60"
+              >
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"
+                />
+              </svg>
+              <span class="ml-2">GitHub</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/kelly-r-bayingana-7097701ba"
+              target="_blank"
+              rel="noopener"
+              class="link-hover text-sm font-medium text-[#71717A] cursor-pointer inline-flex items-center"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="opacity-60"
+              >
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                />
+              </svg>
+
+              <span class="ml-2"> LinkedIn</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FOOTER ───────────────────────────────────── -->
+    <footer class="border-t border-[#E4E4E7] py-8 px-6">
+      <div
+        class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4"
+      >
+        <p class="text-sm text-[#A1A1AA]">
+          © 2026 Kelly Bayingana. Crafted with care.
+        </p>
+        <p class="text-xs text-[#A1A1AA]">
+          Designed &amp; developed with HTML + Tailwind CSS and JavaScript
+        </p>
+      </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
