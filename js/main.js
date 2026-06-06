@@ -31,6 +31,21 @@ if (dot && ring) {
   });
 }
 
+// Navbar color switch — black over light sections, white over dark sections
+const navEl = document.querySelector('header nav');
+const workSection = document.getElementById('work');
+
+if (navEl && workSection) {
+  window.addEventListener('scroll', () => {
+    const workTop = workSection.getBoundingClientRect().top;
+    if (workTop <= 80) {
+      navEl.classList.add('nav-dark');
+    } else {
+      navEl.classList.remove('nav-dark');
+    }
+  }, { passive: true });
+}
+
 // Mobile menu toggle
 const menuBtn = document.getElementById("menuBtn");
 const mobileMenu = document.getElementById("mobileMenu");
