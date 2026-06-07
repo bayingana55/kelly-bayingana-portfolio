@@ -12,6 +12,10 @@
   50% { transform: translateY(5px); }
 }
 
+.arrow-bounce {
+  will-change: transform;
+}
+
 .group:hover .arrow-bounce {
   animation: bounce-arrow 0.7s ease-in-out infinite;
 }
@@ -20,6 +24,10 @@
 @keyframes slide-right {
   0%, 100% { transform: translateX(0); }
   50% { transform: translateX(5px); }
+}
+
+.arrow-slide {
+  will-change: transform;
 }
 
 .group:hover .arrow-slide {
@@ -37,6 +45,7 @@
   border-radius: 9999px;
   cursor: default;
   transition: border-color 0.2s ease;
+  will-change: transform;
 }
 
 @keyframes tag-heartbeat {
@@ -56,6 +65,9 @@
   background-color: rgba(255, 255, 255, 0.1);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
+  /* Force GPU compositing layer — required for backdrop-filter on Windows Chrome/Edge */
+  transform: translateZ(0);
+  isolation: isolate;
 }
 
 /* Navbar base colors */
@@ -89,4 +101,19 @@ nav.nav-dark .nav-link {
 nav.nav-dark .nav-cta {
   background-color: white !important;
   color: #09090B !important;
+}
+
+/* ── Cross-browser social icon hover ──────────────
+   Tailwind v4 wraps group-hover utilities in @media (hover: hover).
+   On touch-capable Windows devices (Surface, hybrid laptops) the browser
+   can report hover: none, silently disabling those rules. These explicit
+   attribute-selector rules fire unconditionally in all browsers. */
+a[href*="github"]:hover svg {
+  opacity: 1;
+  color: #24292e;
+}
+
+a[href*="linkedin"]:hover svg {
+  opacity: 1;
+  color: #0A66C2;
 }
