@@ -43,11 +43,51 @@
         <a
           href="assets/Resume.pdf"
           target="_blank"
-          class="nav-cta text-sm font-semibold px-4 py-2 bg-[#09090B] text-white rounded-xl hover:bg-zinc-800 transition-colors duration-200 cursor-pointer"
+          class="nav-cta hidden md:inline-flex text-sm font-semibold px-4 py-2 bg-[#09090B] text-white rounded-xl hover:bg-zinc-800 transition-colors duration-200 cursor-pointer"
         >
           View Resume
         </a>
+
+        <!-- Hamburger button — mobile only -->
+        <button
+          id="menuBtn"
+          class="md:hidden flex items-center justify-center p-2 rounded-xl text-[#09090B] hover:bg-black/5 transition-colors duration-200 cursor-pointer"
+          aria-label="Toggle menu"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
       </nav>
+
+      <!-- Mobile menu dropdown -->
+      <div
+        id="mobileMenu"
+        class="hidden md:hidden mt-2 nav-blur border border-[#E4E4E7] rounded-2xl px-6 py-5 max-w-5xl mx-auto"
+      >
+        <ul class="flex flex-col gap-5">
+          <li>
+            <a href="#about" class="nav-link text-sm font-medium">About</a>
+          </li>
+          <li>
+            <a href="#work" class="nav-link text-sm font-medium">Projects</a>
+          </li>
+          <li>
+            <a href="#contact" class="nav-link text-sm font-medium">Contact</a>
+          </li>
+          <li class="pt-1 border-t border-[#E4E4E7]">
+            <a
+              href="assets/Resume.pdf"
+              target="_blank"
+              class="nav-cta inline-flex text-sm font-semibold px-4 py-2 bg-[#09090B] text-white rounded-xl hover:bg-zinc-800 transition-colors duration-200 cursor-pointer"
+            >
+              View Resume
+            </a>
+          </li>
+        </ul>
+      </div>
     </header>
 
     <!-- ── HERO ────────────────────────────────────── -->
@@ -136,17 +176,16 @@
           class="marquee-inner flex gap-12 pr-12 text-white/30 font-bold text-sm uppercase tracking-widest"
           style="font-family: &quot;Archivo&quot;, sans-serif"
         >
-          <span>Product Design</span><span class="text-white/15">✦</span>
-          <span>Frontend Dev</span><span class="text-white/15">✦</span>
-          <span>UX Research</span><span class="text-white/15">✦</span>
-          <span>Motion Design</span><span class="text-white/15">✦</span>
-          <span>Prototyping</span><span class="text-white/15">✦</span>
+          <span>Problem Solver</span><span class="text-white/15">✦</span>
+          <span>Fast Learner</span><span class="text-white/15">✦</span>
+          <span>Detail Oriented</span><span class="text-white/15">✦</span>
+          <span>Team Player</span><span class="text-white/15">✦</span>
+          <span>Curious Builder</span><span class="text-white/15">✦</span>
           <span>Figma</span><span class="text-white/15">✦</span>
           <span>Frontend Dev</span><span class="text-white/15">✦</span>
-          <span>UX Research</span><span class="text-white/15">✦</span>
-          <span>Motion Design</span><span class="text-white/15">✦</span>
-          <span>Prototyping</span><span class="text-white/15">✦</span>
-          <span>Product Design</span><span class="text-white/15">✦</span>
+          <span>Purpose Built</span><span class="text-white/15">✦</span>
+          <span>Team Player</span><span class="text-white/15">✦</span>
+          <span>Detail Oriented</span><span class="text-white/15">✦</span>
           <span>Figma</span><span class="text-white/15">✦</span>
         </span>
       </div>
@@ -156,31 +195,30 @@
     <section id="about" class="py-24 px-6 max-w-5xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
         <div>
-          <p
-            class="text-sm font-semibold text-[#2563EB] uppercase tracking-widest mb-3 reveal"
-          >
-            Philosophy
-          </p>
           <h2
             class="font-black text-5xl md:text-6xl text-[#09090B] leading-tight mb-8 reveal reveal-delay-1"
             style="font-family: &quot;Archivo&quot;, sans-serif"
           >
-            Design is<br />clarity.
+            Code is craft.<br />
           </h2>
           <p class="text-[#71717A] leading-relaxed mb-6 reveal reveal-delay-2">
-            I believe good design is more than aesthetics!<br />
-            it’s about clarity, usability, and intention.
+            I got into tech because I believe software fixes real world problems. Not
+            just apps, the kind of systems that make cities work. Software that
+            tells a SkyTrain when to open & close its doors, helps companies run more
+            efficiently, and automates the things that slow communities down.
             <br />
-            <br />I enjoy creating digital experiences where every interaction
-            feels natural, refined, and purposeful.
+            <br />I care about building things that actually work for people.
+            Clean, intentional, purposeful! From the interface down to the
+            infrastructure.
           </p>
 
           <a
             href="#contact"
-            class="inline-flex items-center gap-2 font-semibold text-[#09090B] border-b-2 border-[#09090B] pb-0.5 hover:text-[#2563EB] hover:border-[#2563EB] transition-colors duration-200 cursor-pointer reveal reveal-delay-4"
+            class="group inline-flex items-center gap-2 font-semibold text-[#09090B] border-b-2 border-[#09090B] pb-0.5 hover:text-[#2563EB] hover:border-[#2563EB] transition-colors duration-200 cursor-pointer reveal reveal-delay-4"
           >
-            Let's work together
+            Get in touch
             <svg
+              class="arrow-slide inline-block"
               width="16"
               height="16"
               viewBox="0 0 24 24"
@@ -213,14 +251,15 @@
               Skills & tools
             </p>
             <div class="flex flex-wrap gap-2">
-              <span class="skill-tag">Figma</span>
-              <span class="skill-tag">React</span>
-              <span class="skill-tag">Next.js</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">HTML</span>
+              <span class="skill-tag">CSS</span>
               <span class="skill-tag">Tailwind CSS</span>
-              <span class="skill-tag">Java</span>
-              <span class="skill-tag">Design Systems</span>
-              <span class="skill-tag">Prototyping</span>
-              <span class="skill-tag">UX Research</span>
+              <span class="skill-tag">Node.js</span>
+              <span class="skill-tag">Express</span>
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">PostgreSQL</span>
             </div>
           </div>
         </div>
@@ -257,9 +296,9 @@
               >
                 ShiftLog is a shift tracking and savings projection tool I built
                 while working two jobs through school. I was manually
-                calculating my hours in my head — I needed something that would
+                calculating my hours in my head or calculator , so I needed something that would
                 tell me exactly when I'd hit my financial goals at my current
-                pace. It logs your shifts, calculates take-home pay after tax,
+                pace. It logs your shifts, calculates take home pay after tax,
                 and projects your savings target date. Started as a Python
                 script and evolved into a full web application over six months
                 of real use.
@@ -283,10 +322,16 @@
                 >
               </div>
               <div class="flex gap-6 mt-2">
-                <a href="shiftlog.html" class="group link-hover text-sm font-semibold text-white cursor-pointer">
+                <a
+                  href="shiftlog.html"
+                  class="group link-hover text-sm font-semibold text-white cursor-pointer"
+                >
                   View Project <span class="arrow-slide inline-block">→</span>
                 </a>
-                <a href="#" class="group link-hover text-sm font-semibold text-white/50 cursor-pointer">
+                <a
+                  href="#"
+                  class="group link-hover text-sm font-semibold text-white/50 cursor-pointer"
+                >
                   Live Demo <span class="arrow-slide inline-block">↗</span>
                 </a>
               </div>
@@ -359,10 +404,16 @@
                 >
               </div>
               <div class="flex gap-6 mt-2">
-                <a href="docflow.html" class="group link-hover text-sm font-semibold text-white cursor-pointer">
+                <a
+                  href="docflow.html"
+                  class="group link-hover text-sm font-semibold text-white cursor-pointer"
+                >
                   View Project <span class="arrow-slide inline-block">→</span>
                 </a>
-                <a href="#" class="group link-hover text-sm font-semibold text-white/50 cursor-pointer">
+                <a
+                  href="#"
+                  class="group link-hover text-sm font-semibold text-white/50 cursor-pointer"
+                >
                   Live Demo <span class="arrow-slide inline-block">↗</span>
                 </a>
               </div>
@@ -395,22 +446,11 @@
     <section id="contact" class="py-24 px-6 max-w-5xl mx-auto">
       <div class="max-w-2xl mx-auto text-center">
         <p
-          class="text-sm font-semibold text-[#2563EB] uppercase tracking-widest mb-4 reveal"
-        >
-          Let's connect
-        </p>
-        <h2
-          class="font-black text-5xl md:text-7xl text-[#09090B] leading-tight mb-6 reveal reveal-delay-1"
-          style="font-family: &quot;Archivo&quot;, sans-serif"
-        >
-          Start a<br />project.
-        </h2>
-        <p
           class="text-[#71717A] text-lg leading-relaxed mb-12 reveal reveal-delay-2"
         >
           I'm always open to new opportunities and conversations. Whether you
-          have a project in mind or just want to connect. <br> feel free to reach
-          out.
+          have a project in mind or just want to connect. <br />
+          feel free to reach out.
         </p>
 
         <div class="reveal reveal-delay-3">
