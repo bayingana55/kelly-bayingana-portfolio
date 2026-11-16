@@ -2,14 +2,19 @@
 <html lang="en" class="scroll-smooth">
   <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3P38XYFNB3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-3P38XYFNB3"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-  gtag('config', 'G-3P38XYFNB3');
-</script>
+      gtag("config", "G-3P38XYFNB3");
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kelly Bayingana — CST Student</title>
@@ -23,10 +28,6 @@
     <link rel="stylesheet" href="css/output.css" />
   </head>
   <body class="overflow-x-hidden">
-    <!-- Custom cursor (desktop only) -->
-    <div class="cursor-dot hidden md:block" id="cursorDot"></div>
-    <div class="cursor-ring hidden md:block" id="cursorRing"></div>
-
     <!-- ── NAVBAR ────────────────────────────────── -->
     <header class="fixed top-4 left-4 right-4 z-50">
       <nav
@@ -167,9 +168,9 @@
             class="font-black text-4xl text-[#09090B] stat-number"
             style="font-family: &quot;Archivo&quot;, sans-serif"
           >
-            2
+            6 MONTHS
           </p>
-          <p class="text-sm text-[#71717A] mt-1">ON GOING PROJECTS</p>
+          <p class="text-sm text-[#71717A] mt-1">OF REAL USE: SHIFTLOG</p>
         </div>
         <div>
           <p
@@ -193,17 +194,18 @@
           class="marquee-inner flex gap-12 pr-12 text-white/30 font-bold text-sm uppercase tracking-widest"
           style="font-family: &quot;Archivo&quot;, sans-serif"
         >
-          <span>Problem Solver</span><span class="text-white/15">✦</span>
-          <span>Fast Learner</span><span class="text-white/15">✦</span>
-          <span>Detail Oriented</span><span class="text-white/15">✦</span>
-          <span>Team Player</span><span class="text-white/15">✦</span>
-          <span>Curious Builder</span><span class="text-white/15">✦</span>
-          <span>Figma</span><span class="text-white/15">✦</span>
-          <span>Frontend Dev</span><span class="text-white/15">✦</span>
-          <span>Purpose Built</span><span class="text-white/15">✦</span>
-          <span>Team Player</span><span class="text-white/15">✦</span>
-          <span>Detail Oriented</span><span class="text-white/15">✦</span>
-          <span>Figma</span><span class="text-white/15">✦</span>
+          <span>HTML</span
+          ><span class="text-white/15" aria-hidden="true">✦</span>
+          <span>CSS &amp; TAILWIND</span
+          ><span class="text-white/15" aria-hidden="true">✦</span>
+          <span>JAVASCRIPT</span
+          ><span class="text-white/15" aria-hidden="true">✦</span>
+          <span>PYTHON</span
+          ><span class="text-white/15" aria-hidden="true">✦</span>
+          <span>JAVA</span
+          ><span class="text-white/15" aria-hidden="true">✦</span>
+          <span>SQL</span
+          ><span class="text-white/15" aria-hidden="true">✦</span>
         </span>
       </div>
     </div>
@@ -219,25 +221,22 @@
             Code is craft.<br />
           </h2>
           <p class="text-[#71717A] leading-relaxed mb-6 reveal reveal-delay-2">
-            I got into tech because I’m fascinated by the systems that keep the
-            world moving. Railways, public transit, cities, businesses,
-            infrastructure ! Behind all of them is technology quietly making
-            thousands of decisions every day. Software tells a SkyTrain when to
-            open and close its doors, helps coordinate transportation networks,
-            keeps businesses running, and automates processes that people depend
-            on without even thinking about them.
-
-            <br />
-            <br />
-            That’s what excites me about software. I don’t just want to build
-            apps. I want to build systems that solve real world problems and
-            become part of how things actually work. I care about building
-            technology that is clean, reliable, and intentional, from the
-            interface people interact with to the infrastructure behind it.
-
-            <br />
-            <br />For me, technology is at its best when you barely notice it.
-            It just works, and because it works, everything else can move.
+            Hi there! I’m Kelly, and I like figuring out how things work! I’m
+            happiest when I’m learning something new and software is where that
+            curiosity ended up. I like taking something that’s messy or done by
+            hand and turning it into a system that just works.
+          </p>
+          <p class="text-[#71717A] leading-relaxed mb-6 reveal reveal-delay-2">
+            Right now I’m studying Computer Systems Technology at BCIT. ShiftLog
+            came from my own routine: I was tracking my shifts and doing my pay
+            math in my head, so I built a tool that logs my shifts, calculates what
+            I earned (including night premium pay), and tracks my savings
+            against a goal.
+          </p>
+          <p class="text-[#71717A] leading-relaxed mb-6 reveal reveal-delay-2">
+            Outside of code, you’ll usually find me watching Formula 1,
+            basketball games, working or writing poems. I’m originally from
+            Kigali, Rwanda, and now based in Vancouver.
           </p>
 
           <a
@@ -322,14 +321,12 @@
                 class="leading-relaxed text-sm"
                 style="color: rgba(255, 255, 255, 0.6)"
               >
-                ShiftLog is a shift tracking and savings projection tool I built
-                while working two jobs through school. I was manually
-                calculating my hours in my head or calculator , so I needed
-                something that would tell me exactly when I'd hit my financial
-                goals at my current pace. It logs your shifts, calculates take
-                home pay after tax, and projects your savings target date.
-                Started as a Python script and evolved into a full web
-                application over six months of real use.
+                ShiftLog is a shift tracking and savings tool I built while
+                working through school. I was calculating my hours and pay in my
+                head or on a calculator, so I built something to do it for me.
+                It logs my shifts, calculates gross pay (including night premium
+                hours), records my real paychecks and expenses, and tracks my
+                savings against a goal. 
               </p>
               <div class="flex flex-wrap gap-2 mt-1">
                 <span class="skill-tag">Node.js</span>
@@ -344,7 +341,7 @@
                   rel="noopener noreferrer"
                   class="group link-hover text-sm font-semibold text-white"
                 >
-                  Live Demo <span class="arrow-slide inline-block">↗</span>
+                  Try the live demo <span class="arrow-slide inline-block">↗</span>
                 </a>
                 <a
                   href="https://github.com/bayingana55/ShiftLog"
@@ -365,70 +362,6 @@
               <img
                 src="assets/images/shiftlog-dashboard.png"
                 alt="ShiftLog dashboard showing shifts, earnings, and savings goals"
-                class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-              />
-            </a>
-          </div>
-
-          <!-- PROJECT SLOT 2 -->
-          <div
-            class="py-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center reveal reveal-delay-1"
-          >
-            <div class="flex flex-col gap-4">
-              <h3
-                class="font-black text-2xl text-white leading-tight"
-                style="font-family: &quot;Archivo&quot;, sans-serif"
-              >
-                <strong>ROC 4SIX HR Platform</strong>
-              </h3>
-              <p
-                class="leading-relaxed text-sm"
-                style="color: rgba(255, 255, 255, 0.6)"
-              >
-                ROC 4SIX HR Platform is a multi client HR management system
-                built for ROC 4SIX HR Services to manage client organizations,
-                employees, and recruitment workflows. The platform centralizes
-                HR operations across multiple client organizations through a
-                single interface.
-              </p>
-              <div class="flex flex-wrap gap-2 mt-1">
-                <span class="skill-tag">Javascript</span>
-                <span class="skill-tag">Node.js</span>
-                <span class="skill-tag">Express</span>
-                <span class="skill-tag">PostgreSQL</span>
-                <span class="skill-tag">Tailwind CSS</span>
-              </div>
-              <div class="flex gap-6 mt-2">
-                <div class="flex gap-6 mt-2">
-                  <a
-                    href="https://rock4six-hr.onrender.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="group link-hover text-sm font-semibold text-white"
-                  >
-                    Live Demo <span class="arrow-slide inline-block">↗</span>
-                  </a>
-
-                  <a
-                    href="https://github.com/bayingana55/rock4six-hr"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="group link-hover text-sm font-semibold text-white"
-                  >
-                    View GitHub <span class="arrow-slide inline-block">↗</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <a
-              href="https://rock4six-hr.onrender.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="block rounded-2xl overflow-hidden border border-white/10 h-[240px] group"
-            >
-              <img
-                src="assets/images/roc4six-hr-dashboard.png"
-                alt="ROC 4SIX HR Platform dashboard"
                 class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
               />
             </a>

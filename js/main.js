@@ -13,23 +13,92 @@ const revealObserver = new IntersectionObserver(
 
 document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
 
-// Custom cursor
-const dot = document.getElementById("cursorDot");
-const ring = document.getElementById("cursorRing");
+// Custom cursor ("grow on hover") — mouse devices only, respects reduced motion
+(() => {
+  const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const root = document.documentElement;
+  const HOVER_TARGETS = "a, button";
+  const EASE = 0.15; // ring moves 15% toward the mouse each frame
 
-if (dot && ring) {
-  document.addEventListener("mousemove", (e) => {
-    dot.style.left = e.clientX + "px";
-    dot.style.top = e.clientY + "px";
-    ring.style.left = e.clientX + "px";
-    ring.style.top = e.clientY + "px";
-  });
+  let dot = null;
+  let ring = null;
+  let frameId = null;
+  let mouseX = 0;
+  let mouseY = 0;
+  let ringX = 0;
+  let ringY = 0;
 
-  document.querySelectorAll("a, button").forEach((el) => {
-    el.addEventListener("mouseenter", () => ring.classList.add("hovered"));
-    el.addEventListener("mouseleave", () => ring.classList.remove("hovered"));
-  });
-}
+  const place = (el, x, y) => {
+    el.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
+  };
+
+  const onMove = (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    if (!root.classList.contains("cursor-visible")) {
+      // First move (or re-entering the window): snap the ring to the mouse
+      ringX = mouseX;
+      ringY = mouseY;
+      root.classList.add("cursor-visible");
+    }
+    place(dot, mouseX, mouseY);
+  };
+
+  const onOver = (e) => {
+    ring.classList.toggle("is-hovering", !!e.target.closest(HOVER_TARGETS));
+  };
+
+  const onOut = (e) => {
+    // relatedTarget is null when the mouse leaves the window
+    if (!e.relatedTarget) root.classList.remove("cursor-visible");
+  };
+
+  const tick = () => {
+    ringX += (mouseX - ringX) * EASE;
+    ringY += (mouseY - ringY) * EASE;
+    place(ring, ringX, ringY);
+    frameId = requestAnimationFrame(tick);
+  };
+
+  const makeEl = (className) => {
+    const el = document.createElement("div");
+    el.className = className;
+    el.setAttribute("aria-hidden", "true");
+    document.body.appendChild(el);
+    return el;
+  };
+
+  const enable = () => {
+    if (dot) return;
+    dot = makeEl("cursor-dot");
+    ring = makeEl("cursor-ring");
+    root.classList.add("has-custom-cursor");
+    document.addEventListener("mousemove", onMove, { passive: true });
+    document.addEventListener("mouseover", onOver, { passive: true });
+    document.addEventListener("mouseout", onOut, { passive: true });
+    frameId = requestAnimationFrame(tick);
+  };
+
+  const disable = () => {
+    if (!dot) return;
+    cancelAnimationFrame(frameId);
+    document.removeEventListener("mousemove", onMove);
+    document.removeEventListener("mouseover", onOver);
+    document.removeEventListener("mouseout", onOut);
+    dot.remove();
+    ring.remove();
+    dot = ring = null;
+    root.classList.remove("has-custom-cursor", "cursor-visible");
+  };
+
+  const update = () =>
+    finePointer.matches && !reducedMotion.matches ? enable() : disable();
+
+  finePointer.addEventListener("change", update);
+  reducedMotion.addEventListener("change", update);
+  update();
+})();
 
 // Navbar color switch — black over light sections, white over dark sections
 const navEl = document.querySelector('header nav');

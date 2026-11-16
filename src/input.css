@@ -130,3 +130,51 @@ a[href*="linkedin"]:hover svg {
 .reveal-delay-2 { transition-delay: 0.2s; }
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }   
+
+/* ── Custom cursor ("grow on hover") ──────────────
+   Elements are created by js/main.js only on mouse devices without
+   prefers-reduced-motion; otherwise the normal cursor is kept. */
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none;
+  border-radius: 9999px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  will-change: transform;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #2A7A4B;
+}
+
+.cursor-ring {
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid #2A7A4B;
+  background-color: transparent;
+  transition: opacity 0.2s ease, width 0.2s ease, height 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.cursor-ring.is-hovering {
+  width: 64px;
+  height: 64px;
+  background-color: rgba(42, 122, 75, 0.15);
+}
+
+html.cursor-visible .cursor-dot,
+html.cursor-visible .cursor-ring {
+  opacity: 1;
+}
+
+/* Hide the native cursor only while the effect is active */
+html.has-custom-cursor,
+html.has-custom-cursor * {
+  cursor: none !important;
+}
