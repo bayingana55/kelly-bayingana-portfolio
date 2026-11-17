@@ -130,3 +130,37 @@ if (menuBtn && mobileMenu) {
     });
   });
 }
+// Each skill releases its "signature line" of code on hover
+const skillLines = {
+  "JavaScript": 'console.log("hello");',
+  "Python": "def main():",
+  "Java": "public static void main(String[] args) {",
+  "SQL": "SELECT * FROM shifts;",
+  "HTML": "<!doctype html>",
+  "CSS": "body { margin: 0; }",
+  "Tailwind CSS": 'class="flex gap-4"',
+  "Node.js": "node server.js",
+  "Express": 'app.get("/", (req, res) => {',
+  "PostgreSQL": "CREATE TABLE shifts (",
+  "Git": 'git commit -m "first"',
+  "GitHub Actions": "on: push",
+  "Playwright": 'await page.click("Log shift");',
+};
+
+const canHover = matchMedia("(hover: hover)").matches;
+const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (canHover && !reduceMotion) {
+  document.querySelectorAll(".skill-tag").forEach((tag) => {
+    const line = skillLines[tag.textContent.trim()];
+    if (!line) return;
+    tag.addEventListener("mouseenter", () => {
+      const ghost = document.createElement("span");
+      ghost.className = "code-ghost";
+      ghost.setAttribute("aria-hidden", "true");
+      ghost.textContent = line;
+      tag.appendChild(ghost);
+      ghost.addEventListener("animationend", () => ghost.remove());
+    });
+  });
+}

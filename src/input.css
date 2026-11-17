@@ -178,3 +178,24 @@ html.has-custom-cursor,
 html.has-custom-cursor * {
   cursor: none !important;
 }
+/* Ghost code line that floats up from a skill tag on hover */
+.skill-tag { position: relative; }
+
+.code-ghost {
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  white-space: nowrap;
+  pointer-events: none;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.75rem;
+  color: #2A7A4B;
+  opacity: 0;
+  animation: code-ghost 1.6s ease-out forwards;
+}
+
+@keyframes code-ghost {
+  0%   { opacity: 0;    transform: translate(-50%, 6px);   filter: blur(2px); }
+  20%  { opacity: 0.85;                                     filter: blur(0); }
+  100% { opacity: 0;    transform: translate(-50%, -46px); filter: blur(3px); }
+}
