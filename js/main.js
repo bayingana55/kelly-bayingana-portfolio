@@ -45,8 +45,22 @@ document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el))
     place(dot, mouseX, mouseY);
   };
 
+  // Cursor colour per hovered link; null falls back to the CSS default (green)
+  const colorFor = (link) => {
+    if (!link) return null;
+    const href = link.getAttribute("href") || "";
+    if (href.includes("linkedin.com")) return "#0A66C2";
+    if (href.includes("github.com")) return "#6E7681";
+    if (link.dataset.cursor === "dark") return "#09090B"; // Get in touch, Say hello, View Resume
+    return null;
+  };
+
   const onOver = (e) => {
-    ring.classList.toggle("is-hovering", !!e.target.closest(HOVER_TARGETS));
+    const target = e.target.closest(HOVER_TARGETS);
+    ring.classList.toggle("is-hovering", !!target);
+    const color = colorFor(target);
+    if (color) root.style.setProperty("--cursor-color", color);
+    else root.style.removeProperty("--cursor-color");
   };
 
   const onOut = (e) => {
@@ -90,6 +104,7 @@ document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el))
     ring.remove();
     dot = ring = null;
     root.classList.remove("has-custom-cursor", "cursor-visible");
+    root.style.removeProperty("--cursor-color");
   };
 
   const update = () =>

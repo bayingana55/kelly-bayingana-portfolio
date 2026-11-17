@@ -133,7 +133,13 @@ a[href*="linkedin"]:hover svg {
 
 /* ── Custom cursor ("grow on hover") ──────────────
    Elements are created by js/main.js only on mouse devices without
-   prefers-reduced-motion; otherwise the normal cursor is kept. */
+   prefers-reduced-motion; otherwise the normal cursor is kept.
+   --cursor-color is set on <html> by js/main.js while hovering
+   LinkedIn / GitHub links and the dark CTA buttons. */
+:root {
+  --cursor-color: #2A7A4B;
+}
+
 .cursor-dot,
 .cursor-ring {
   position: fixed;
@@ -150,22 +156,23 @@ a[href*="linkedin"]:hover svg {
 .cursor-dot {
   width: 8px;
   height: 8px;
-  background-color: #2A7A4B;
+  background-color: var(--cursor-color);
+  transition: opacity 0.2s ease, background-color 0.2s ease;
 }
 
 .cursor-ring {
   width: 36px;
   height: 36px;
-  border: 1.5px solid #2A7A4B;
+  border: 1.5px solid var(--cursor-color);
   background-color: transparent;
   transition: opacity 0.2s ease, width 0.2s ease, height 0.2s ease,
-    background-color 0.2s ease;
+    background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .cursor-ring.is-hovering {
   width: 64px;
   height: 64px;
-  background-color: rgba(42, 122, 75, 0.15);
+  background-color: color-mix(in srgb, var(--cursor-color) 15%, transparent);
 }
 
 html.cursor-visible .cursor-dot,
