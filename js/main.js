@@ -51,6 +51,7 @@ document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el))
     const href = link.getAttribute("href") || "";
     if (href.includes("linkedin.com")) return "#0A66C2";
     if (href.includes("github.com")) return "#6E7681";
+    if (link.dataset.cursor === "blue") return "#2563EB"; // Get in touch
     if (link.dataset.cursor === "dark") return "#09090B"; // Get in touch, Say hello, View Resume
     return null;
   };
