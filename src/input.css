@@ -180,6 +180,11 @@ html.cursor-visible .cursor-ring {
   opacity: 1;
 }
 
+/* Solid (data-cursor="dark") buttons: fade the ring out, keep the dot */
+html.cursor-visible .cursor-ring.is-hidden {
+  opacity: 0;
+}
+
 /* Hide the native cursor only while the effect is active */
 html.has-custom-cursor,
 html.has-custom-cursor * {

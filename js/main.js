@@ -59,6 +59,8 @@ document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el))
   const onOver = (e) => {
     const target = e.target.closest(HOVER_TARGETS);
     ring.classList.toggle("is-hovering", !!target);
+    // Solid buttons: hide the ring, keep only the dot, so the label stays readable
+    ring.classList.toggle("is-hidden", target?.dataset.cursor === "dark");
     const color = colorFor(target);
     if (color) root.style.setProperty("--cursor-color", color);
     else root.style.removeProperty("--cursor-color");
